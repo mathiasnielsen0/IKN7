@@ -58,7 +58,7 @@ namespace UDP
                     received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
                     Console.WriteLine("Data: {0}\n", received_data);
 
-                    switch (received_data)
+                    switch (received_data.ToLower())
                     {
                         case "u":
                         {
@@ -66,19 +66,7 @@ namespace UDP
                         }
                         break;
 
-                        case "U":
-                        {   
-                            SendMsg(UpTime());
-                        }
-                        break;
-
                         case "l":
-                        {
-                            SendMsg(AvgLoad());
-                        }
-                        break;
-
-                        case "L":
                         {
                             SendMsg(AvgLoad());
                         }
