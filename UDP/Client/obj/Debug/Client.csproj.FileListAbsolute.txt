@@ -1,0 +1,7 @@
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\bin\Debug\Client.exe.config
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\bin\Debug\Client.exe
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\bin\Debug\Client.pdb
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\obj\Debug\Client.exe
+C:\Users\mathias\Desktop\4. Semester\I4IKN\UDP2.0\UDP\Client\obj\Debug\Client.pdb
