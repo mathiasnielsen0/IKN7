@@ -43,10 +43,9 @@ namespace Client
         public void Start()
         {
             Console.WriteLine("Write a text to the server. 'u' for uptime and 'l' for loadavg.");
-            Console.WriteLine("Enter a blank line to exit the program.");
+            Console.WriteLine("Enter text to send, blank line to quit");
             while (!done)
             {
-                Console.WriteLine("Enter text to send, blank line to quit");
                 string text_to_send = Console.ReadLine();
                 if (text_to_send.Length == 0)
                 {

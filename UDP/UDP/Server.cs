@@ -12,8 +12,6 @@ namespace UDP
 {
     public class Server
     {
-
-
         private const int PORT = 9000;
 
         //Stuff to receive
@@ -52,13 +50,13 @@ namespace UDP
 
                 while (!done)
                 {
-                    Console.WriteLine("Waiting for broadcast");
+                    Console.WriteLine("Waiting for broadcast...");
                     
                     // Blocking call
                     receive_byte_array = listener.Receive(ref groupEP);
                     Console.WriteLine("Received a broadcast from {0}", groupEP.ToString());
                     received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
-                    Console.WriteLine("data follows \n{0}\n\n", received_data);
+                    Console.WriteLine("Data: {0}\n", received_data);
 
                     switch (received_data)
                     {
@@ -88,7 +86,7 @@ namespace UDP
 
                         default:
                         {
-                                Console.WriteLine("Data didn't match any commands");
+                            Console.WriteLine("Data didn't match any commands");
                         }
                         break;
                     }
@@ -106,7 +104,7 @@ namespace UDP
             byte[] send_buffer = Encoding.ASCII.GetBytes(text_to_send);
 
             // Remind the user of where this is going.
-            Console.WriteLine("sending to address: {0} port: {1}",
+            Console.WriteLine("Sending to address: {0} port: {1}",
                 sending_end_point.Address,
                 sending_end_point.Port);
             try
@@ -134,9 +132,17 @@ namespace UDP
         {
             string text;
 
-            using (StreamReader sr = new StreamReader("/~/../proc/avgload"))
+            try
             {
-                text = sr.ReadToEnd();
+                using (StreamReader sr = new StreamReader("/~/../proc/loadavg"))
+                {
+                    text = sr.ReadToEnd();
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+                return "File wasn't found"; 
             }
 
             return text;
@@ -146,9 +152,17 @@ namespace UDP
         {
             string text;
 
-            using (StreamReader sr = new StreamReader("/~/../proc/uptime"))
+            try
             {
-                text = sr.ReadToEnd();
+                using (StreamReader sr = new StreamReader("/~/../proc/uptime"))
+                {
+                    text = sr.ReadToEnd();
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+                return "File wasn't found";
             }
             
             return text;
